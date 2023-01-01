@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "date_created": {
+      "type": "date",
+      "required": true
+    },
+    "URL": {
+      "type": "string",
+      "required": true
+    },
+    "git_URL": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "richtext",
+      "required": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    }
+  }
+}
